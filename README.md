@@ -6,7 +6,7 @@
 [![IIT Bombay](https://img.shields.io/badge/IIT%20Bombay-CS683%20Adv%20Comp%20Arch-red.svg)](https://www.cse.iitb.ac.in/)
 
 > **Academic Affiliation**: Course Project for **CS 683: Advanced Computer Architecture**, IIT Bombay  
-> **Collaborators**: **Dheeraj Kumar Maradana** (23B0920), **Sabil Ahmad** (23B1057), **Abhineet Majety** (23B0923), **B Shashank** (23B1040)
+> **Collaborators**: **Dheeraj Kumar Maradana** **Sabil Ahmad**  **Abhineet Majety**  **B Shashank** 
 
 ---
 
@@ -20,18 +20,6 @@ The project tackles two critical high-performance compute kernels:
 
 ---
 
-## 🏗️ Optimization Pipeline & Architecture
-
-```mermaid
-flowchart TD
-    A["Naive Baseline (conv_naive / naive SGEMM)<br/>Stride jumps, poor spatial locality, high MPKI"] --> B["1. Loop Reordering<br/>Stride-1 streaming, spatial locality, hardware prefetcher friendly"]
-    B --> C["2. Register Unrolling & ILP<br/>Multiple independent accumulators, break loop dependencies"]
-    C --> D["3. Cache Tiling & Blocking<br/>Fit active working sets into L1D (48KB) / L2 (2MB) caches"]
-    D --> E["4. AVX2 Vectorization & FMA<br/>8 single-precision floats/vector, 256-bit registers, _mm256_fmadd_ps"]
-    E --> F["5. Software Prefetching & llama.cpp Integration<br/>_mm_prefetch to hide DRAM/LLC latency during LLM inference"]
-```
-
----
 
 ## 🔬 Key Engineering Implementations
 
@@ -96,5 +84,5 @@ make -j$(nproc)
 Developed as part of **CS 683 (Advanced Computer Architecture)** at the **Indian Institute of Technology Bombay**.
 * **Dheeraj Kumar Maradana** ([@dheerajkumar2005](https://github.com/dheerajkumar2005))
 * **Sabil Ahmad** ([@sabilxD](https://github.com/sabilxD))
-* **Abhineet Majety**
+* **Abhineet Majety** ([@abhineetm13](https://github.com/abhineetm13))
 * **B Shashank** ([@Shasankbt](https://github.com/Shasankbt))
